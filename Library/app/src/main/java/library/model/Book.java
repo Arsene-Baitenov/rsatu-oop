@@ -1,4 +1,4 @@
-package library;
+package library.model;
 
 public class Book extends Publication {
     private final String genre;

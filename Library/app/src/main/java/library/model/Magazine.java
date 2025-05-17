@@ -1,4 +1,4 @@
-package library;
+package library.model;
 
 public class Magazine extends Publication {
     private final int issueNumber;

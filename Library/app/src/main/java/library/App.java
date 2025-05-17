@@ -1,5 +1,10 @@
 package library;
 
+import library.model.Book;
+import library.model.Library;
+import library.model.Magazine;
+import library.model.Publication;
+
 import java.util.Scanner;
 
 public class App {
