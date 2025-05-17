@@ -1,7 +1,7 @@
 package library;
 
 public class Magazine extends Publication {
-    private int issueNumber;
+    private final int issueNumber;
 
     public Magazine(String title, String author, int year, int issueNumber) {
         super(title, author, year);
