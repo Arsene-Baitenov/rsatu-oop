@@ -12,4 +12,8 @@ public class Magazine extends Publication {
     public String getInfo() {
         return String.format("Magazine: %s by %s (%d), Issue #: %d", title, author, year, issueNumber);
     }
+
+    public int getIssueNumber() {
+        return issueNumber;
+    }
 }

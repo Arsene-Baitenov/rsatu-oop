@@ -12,4 +12,8 @@ public class Book extends Publication {
     public String getInfo() {
         return String.format("Book: %s by %s (%d), Genre: %s", title, author, year, genre);
     }
+
+    public String getGenre() {
+        return genre;
+    }
 }

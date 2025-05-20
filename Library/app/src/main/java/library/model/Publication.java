@@ -19,4 +19,16 @@ public abstract class Publication implements Readable {
     public void read(Consumer<String> consumer) {
         consumer.accept(String.format("Reading %s by %s.", title, author));
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getYear() {
+        return year;
+    }
 }
