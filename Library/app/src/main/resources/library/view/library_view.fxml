@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+
+<?import java.lang.String?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="library.controller.GuiController">
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Добавить публикацию:"/>
+            <GridPane hgap="10" vgap="10">
+                <Label text="Тип:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <ChoiceBox fx:id="typeChoiceBox" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Книга"/>
+                            <String fx:value="Журнал"/>
+                        </FXCollections>
+                    </items>
+                </ChoiceBox>
+
+                <Label text="Название:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="titleField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Автор:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="authorField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Год:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="yearField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <!-- Жанр (для книги) -->
+                <HBox fx:id="genreBox" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="2" spacing="10">
+                    <Label text="Жанр (для книги):"/>
+                    <TextField fx:id="genreField" />
+                </HBox>
+
+                <!-- Выпуск № (для журнала) -->
+                <HBox fx:id="issueNumberBox" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2" spacing="10">
+                    <Label text="Выпуск № (для журнала):"/>
+                    <TextField fx:id="issueNumberField" />
+                </HBox>
+            </GridPane>
+            <Button text="Добавить" onAction="#onAddClicked"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Список публикаций:"/>
+            <TableView fx:id="publicationTable">
+                <columns>
+                    <TableColumn text="Название" fx:id="titleColumn"/>
+                    <TableColumn text="Автор" fx:id="authorColumn"/>
+                    <TableColumn text="Год" fx:id="yearColumn"/>
+                    <TableColumn text="Тип" fx:id="typeColumn"/>
+                    <TableColumn text="Дополнительно" fx:id="extraColumn"/>
+                </columns>
+            </TableView>
+            <Button text="Удалить выбранное" onAction="#onDeleteClicked"/>
+        </VBox>
+    </center>
+</BorderPane>
